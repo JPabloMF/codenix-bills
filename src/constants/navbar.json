@@ -1,0 +1,14 @@
+[
+    { "title": "Home", "url": "/Dashboard"
+    },
+    { "title": "Bills", "url": "/Dashboard/Bills"
+    },
+    { "title": "Document bills", "url": "/Dashboard/DocumentBills"
+    },
+    { "title": "Goals", "url": "/Dashboard/Goals"
+    },
+    { "title": "Pendings", "url": "/Dashboard/Pendings"
+    },
+    { "title": "Stats", "url": "/Dashboard/Stats"
+    }
+]
