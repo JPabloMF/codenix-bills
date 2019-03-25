@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
+import logo from '../../../assets/images/logo1.png';
+
 const Nav = styled.nav`
     width: 250px;
     height: 100vh;
@@ -12,10 +14,30 @@ const Nav = styled.nav`
     display: flex;
     flex-direction: column;
 `
+const Item = styled(Link)`
+    color: #fa8231;
+    text-decoration: none;
+    padding: 15px;
+    :hover{
+        border-left: 5px solid #fa8231;
+        background-color: #343b3d;
+    }
+`
+const Img = styled.img`
+    width: 150px;
+    height: 50px;
+    margin: 10px 0;
+    align-self: center;
+`
 
 const Navbar = props => (
     <Nav>
-        {props.itemsMenu.map(item => <Link key={item.title} to={item.url}>{item.title}</Link>)}
+        <Img src={logo} alt="logo codenix bills"/>
+        {props.itemsMenu.map(item => 
+            <Item key={item.title} to={item.url}>
+                {item.title}
+            </Item>
+        )}
     </Nav>
 )
 
