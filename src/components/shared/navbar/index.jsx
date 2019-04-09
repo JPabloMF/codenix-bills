@@ -24,13 +24,17 @@ const Img = styled.img`
     align-self: center;
 `
 
-const Navbar = props => (
-  <Nav>
-    <Img src={logo} alt="logo codenix bills" />
-    {props.itemsMenu.map(item => (
-      <Item title={item.title} url={item.url} icon={item.icon} />
-    ))}
-  </Nav>
-);
+const Navbar = props => {
+  const activeRoute = url => (window.location.href.split(window.location.host)[1] === url);
+
+  return(
+    <Nav>
+      <Img src={logo} alt="logo codenix bills" />
+      {props.itemsMenu.map(item => (
+        <Item key={item.url} title={item.title} url={item.url} icon={item.icon} active={activeRoute(item.url)} />
+      ))}
+    </Nav>
+  )
+};
 
 export default Navbar
