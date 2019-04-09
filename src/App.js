@@ -7,6 +7,17 @@ import Registre from './components/registre';
 import PageNotFound from './components/pagenotfound';
 import Dashboard from './components/dashboard';
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHome, faFileInvoiceDollar, faFolder, faFlag, faThumbtack, faChartLine } from "@fortawesome/free-solid-svg-icons";
+library.add(
+  faHome,
+  faFileInvoiceDollar,
+  faFolder,
+  faFlag,
+  faThumbtack,
+  faChartLine
+);
+
 class App extends Component {
   render() {
     return (

@@ -1,28 +1,22 @@
 import React from 'react'
-import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 import logo from '../../../assets/images/logo1.png';
 
+import Item from './Items';
+
 const Nav = styled.nav`
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #2d3436;
-    display: flex;
-    flex-direction: column;
-`
-const Item = styled(Link)`
-    color: #fa8231;
-    text-decoration: none;
-    padding: 15px;
-    :hover{
-        border-left: 5px solid #fa8231;
-        background-color: #343b3d;
-    }
-`
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #2d3436;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 1px 5px -2px rgba(0, 0, 0, 0.18);
+`;
+
 const Img = styled.img`
     width: 150px;
     height: 50px;
@@ -31,14 +25,12 @@ const Img = styled.img`
 `
 
 const Navbar = props => (
-    <Nav>
-        <Img src={logo} alt="logo codenix bills"/>
-        {props.itemsMenu.map(item => 
-            <Item key={item.title} to={item.url}>
-                {item.title}
-            </Item>
-        )}
-    </Nav>
-)
+  <Nav>
+    <Img src={logo} alt="logo codenix bills" />
+    {props.itemsMenu.map(item => (
+      <Item title={item.title} url={item.url} icon={item.icon} />
+    ))}
+  </Nav>
+);
 
 export default Navbar
