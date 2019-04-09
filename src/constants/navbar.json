@@ -1,0 +1,14 @@
+[
+    { "title": "Home", "url": "/Dashboard", "icon": "home"
+    },
+    { "title": "Bills", "url": "/Dashboard/Bills", "icon": "file-invoice-dollar"
+    },
+    { "title": "Document bills", "url": "/Dashboard/DocumentBills", "icon": "folder"
+    },
+    { "title": "Goals", "url": "/Dashboard/Goals", "icon": "flag"
+    },
+    { "title": "Pendings", "url": "/Dashboard/Pendings", "icon": "thumbtack"
+    },
+    { "title": "Stats", "url": "/Dashboard/Stats", "icon": "chart-line"
+    }
+]
