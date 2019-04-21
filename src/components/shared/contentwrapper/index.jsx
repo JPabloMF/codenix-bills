@@ -12,21 +12,26 @@ import Pendings from '../../dashboard/pendings';
 import Stats from '../../dashboard/stats';
 
 const Wrapper = styled.div`
-    margin-left: 250px;
+  margin-left: 250px;
+  margin-top: 40px;
+  transition: 300ms;
+  ${({ open }) => !open && `
+    margin-left: 50px;
+  `}
 `;
 
-const ContentWrapper = props => (
-    <Wrapper>
-        <Switch>
-            <Route exact path="/Dashboard" component={Home} />
-            <Route path="/Dashboard/Bills" component={Bills} />
-            <Route path="/Dashboard/DocumentBills" component={DocumentBills} />
-            <Route path="/Dashboard/Goals" component={Goals} />
-            <Route path="/Dashboard/Pendings" component={Pendings} />
-            <Route path="/Dashboard/Stats" component={Stats} />
-            <Route component={PageNotFound} />
-        </Switch>
-    </Wrapper>
-)
+const ContentWrapper = ({ open }) => (
+  <Wrapper open={open}>
+    <Switch>
+      <Route exact path="/Dashboard" component={Home} />
+      <Route path="/Dashboard/Bills" component={Bills} />
+      <Route path="/Dashboard/DocumentBills" component={DocumentBills} />
+      <Route path="/Dashboard/Goals" component={Goals} />
+      <Route path="/Dashboard/Pendings" component={Pendings} />
+      <Route path="/Dashboard/Stats" component={Stats} />
+      <Route component={PageNotFound} />
+    </Switch>
+  </Wrapper>
+);
 
 export default ContentWrapper

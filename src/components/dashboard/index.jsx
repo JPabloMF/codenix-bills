@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState } from "react";
 
 /* constants */
-import navData from '../../constants/navbar.json';
+import navData from "../../constants/navbar.json";
 
 /* Components */
-import ContentWrapper from '../shared/contentwrapper'
-import Navbar from '../shared/navbar'
+import ContentWrapper from "../shared/contentwrapper";
+import Navbar from "../shared/navbar";
+import Header from "../shared/header";
 
-const Dashboard = () => (
+/* utils */
+import { isMobile } from "../../utils/devices";
+
+const Dashboard = () => {
+  const [openMenu, setOpenMenu] = useState(isMobile.any() ? false : true);
+  return (
     <div>
-        <Navbar itemsMenu={navData} />
-        <ContentWrapper />
+      <Navbar itemsMenu={navData} open={openMenu} />
+      <Header setOpenMenu={setOpenMenu} open={openMenu} />
+      <ContentWrapper open={openMenu} />
     </div>
-)
+  );
+};
 
-export default Dashboard
+export default Dashboard;

@@ -8,14 +8,15 @@ import PageNotFound from './components/pagenotfound';
 import Dashboard from './components/dashboard';
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHome, faFileInvoiceDollar, faFolder, faFlag, faThumbtack, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faFileInvoiceDollar, faFolder, faFlag, faThumbtack, faChartLine, faBars } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faHome,
   faFileInvoiceDollar,
   faFolder,
   faFlag,
   faThumbtack,
-  faChartLine
+  faChartLine,
+  faBars
 );
 
 class App extends Component {
